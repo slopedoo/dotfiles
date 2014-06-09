@@ -4,6 +4,6 @@ all:
 	@echo "Please run 'make install'"
 
 install:
-	cp .bashrc $(INSTALL_DIR)
-	cp .aliasrc $(INSTALL_DIR)
-	cp .conkyrc $(INSTALL_DIR)
+	cp _bashrc $(INSTALL_DIR).bashrc
+	cp _aliasrc $(INSTALL_DIR).aliasrc
+	cp _conkyrc $(INSTALL_DIR).conkyrc
