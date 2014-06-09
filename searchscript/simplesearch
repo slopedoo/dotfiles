@@ -2,7 +2,7 @@
 ##-----------
 ## A very simple search script with option-based interface
 ##-----------
-
+## TESTE
 ##Depth values can be changed:
 DEEP=10
 MEDIUM=5

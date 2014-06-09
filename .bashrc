@@ -32,8 +32,8 @@ export HISTCONTROL=ignoreboth
 #-----------------
 # Import aliases
 #-----------------
-source ~/.aliasrc
-alias aliasrc="$EDITOR ~/.aliasrc"
+source ~/github/.aliasrc
+alias aliasrc="$EDITOR ~/github/.aliasrc"
 
 #-----------------
 # Functions

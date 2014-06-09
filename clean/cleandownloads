@@ -1,0 +1,16 @@
+#!/bin/bash
+shopt -s extglob
+now=$(date +"%m_%d_%Y")
+
+cd ~/Downloads/
+if [[ $(ls old/$now | wc -l) = 0 ]]; then
+	mkdir old/$now/
+fi
+if [[ $(ls !(*.zip|*.iso|old|zips|isos) 2>/dev/null | wc -l ) != 0 ]]; then
+	mv !(*.zip|*.iso|old|zips|isos) old/$now/ 
+fi
+mv *.zip zips/ 2>/dev/null
+mv *.iso isos/ 2>/dev/null
+ls */*
+
+shopt -u extglob
