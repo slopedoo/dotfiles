@@ -1,0 +1,30 @@
+#avoid flicker
+double_buffer yes
+
+own_window no
+own_window_transparent yes
+own_window_colour 000000
+own_window_type desktop
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager
+
+#position
+gap_x 0
+#gap_y 1040
+gap_y 3
+alignment top_right
+
+#behaviour
+update_interval 2
+
+#colour
+default_color 8f8f8f
+#default_shade_color 000000
+own_window_colour 262626
+
+#to prevent window from moving
+#use_spacer left
+minimum_size 1720 0
+#maximum_width 700
+
+TEXT
+${goto 350}${font nu:pixelsize=1}${color}Cpu usage:${color eeeeee}${font}${cpu cpu0}%${color}${goto 430} | Cpu temp: ${color eeeeee}${execi 8 sensors | grep Physical | cut -c18-21 | sed '/^$/d'} C ${color} ${goto 560}| Mem: ${color eeeeee}${font}${mem} ${color}${goto 647}| Down: ${color eeeeee}${font}${downspeed wlp9s0}${color}${goto 735} | Up: ${color eeeeee}${font}${upspeed wlp9s0} ${color} ${goto 1100}Kernel: ${color eeeeee}${kernel} ${color}| IP: ${color eeeeee}${addr wlp9s0} ${color}| Root: ${color eeeeee}${font}${fs_free /} ${color}| Home: ${color eeeeee}${font}${fs_free /home} ${color}| ${font nu:9}${color}${time %A,}${color eeeeee} ${time %d}${color}. ${time %B} ${color eeeeee}${time %H:%M} 
