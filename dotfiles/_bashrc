@@ -4,6 +4,8 @@ PS1='\u@\h \[\e[7m\]\w\[\e[0m\] -> '
 
 export PROMPT_COMMAND='q="- $(date +%T)"; while [[ ${#q} -lt $COLUMNS ]]; do q="${q:0:1}$q"; done; echo -e "\033[0;90m$q\033[0;0m";'
 
+PATH=$PATH:/home/sigurd/bin
+
 if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
 fi
