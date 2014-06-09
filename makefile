@@ -8,4 +8,4 @@ install:
 	cp dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
 	cp dotfiles/_conkyrc $(INSTALL_DIR).conkyrc
 	cp caps/_caps $(INSTALL_DIR).caps
-	cp caps/caps_remap.desktop $(INSTALL_DIR)/.config/autostart/
+	cp caps/caps_remap.desktop $(INSTALL_DIR).config/autostart/
