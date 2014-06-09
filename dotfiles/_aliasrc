@@ -1,0 +1,34 @@
+#-----------------
+# Aliases
+#-----------------
+EDITOR="mousepad"
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias grep='grep --color=tty -d skip'
+alias cp="cp -i"
+alias df='df -h'
+alias free='free -m' # show sizes in MB
+alias upd="sudo pacman -Syu"
+alias gedit="$EDITOR"
+alias conkyrc="$EDITOR ~/.conkyrc"
+alias conkybackup="cp ~/.conkyrc ~/Dropbox/Annet/linuxBak/.conkyrc.bak"
+alias bashrc="$EDITOR ~/.bashrc"
+alias src="source ~/.bashrc"
+alias bbak="cp ~/.bashrc ~/Dropbox/Annet/linuxBak/.bashrc.bak"
+alias fstab="sudo $EDITOR /etc/fstab"
+alias removedir="sudo rm -rf"
+alias pdelete="sudo pacman -Rsn"  ##fully deletes packages - including dependencies & config files
+alias pS="sudo pacman -S"
+alias namemaker="shuf -n 2 /usr/share/dict/cracklib-small | tr -dc 'A-Za-z0-9\n'"
+hexscroll() { pv -qL 90 /dev/urandom | xxd -c $(( ($COLUMNS-10)*2/7 )); }
+
+# Git aliases
+alias gstat="git status --column"
+alias gcom="git commit -m"
+alias gadd="git add "
+alias gdif="git diff"
+alias grm="git rm"
+alias gull="git pull"
+alias gush="git push"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit"
