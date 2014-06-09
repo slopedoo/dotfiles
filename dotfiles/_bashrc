@@ -4,10 +4,16 @@ PS1='\u@\h \[\e[7m\]\w\[\e[0m\] -> '
 
 export PROMPT_COMMAND='q="- $(date +%T)"; while [[ ${#q} -lt $COLUMNS ]]; do q="${q:0:1}$q"; done; echo -e "\033[0;90m$q\033[0;0m";'
 
-PATH=$PATH:/home/sigurd/bin
-
 if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
+fi
+
+if [ -d "$HOME/bin" ] ; then
+  	PATH="$HOME/bin:$PATH"
+	case ":$PATH:" in
+	  *":$new_entry:"*) :;; # already there
+	  *) PATH="$new_entry:$PATH";; # or PATH="$PATH:$new_entry"
+	esac
 fi
 
 echo ""
@@ -34,8 +40,8 @@ export HISTCONTROL=ignoreboth
 #-----------------
 # Import aliases
 #-----------------
-source ~/github/.aliasrc
-alias aliasrc="$EDITOR ~/github/.aliasrc"
+source ~/.aliasrc
+alias aliasrc="$EDITOR ~/.aliasrc"
 
 #-----------------
 # Functions
@@ -71,11 +77,4 @@ function foldersize() { du -hd 1 $@ | sort -h | tail -n 21 | head -n 20; }
 myip() {
 /sbin/ifconfig | grep "inet 192"
 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
-}
-
-function path(){
-    old=$IFS
-    IFS=:
-    printf "%s\n" $PATH
-    IFS=$old
 }
