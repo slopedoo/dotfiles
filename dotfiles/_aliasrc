@@ -21,7 +21,6 @@ alias removedir="sudo rm -rf"
 alias pdelete="sudo pacman -Rsn"  ##fully deletes packages - including dependencies & config files
 alias pS="sudo pacman -S"
 alias namemaker="shuf -n 2 /usr/share/dict/cracklib-small | tr -dc 'A-Za-z0-9\n'"
-hexscroll() { pv -qL 90 /dev/urandom | xxd -c $(( ($COLUMNS-10)*2/7 )); }
 
 # Git aliases
 alias gstat="git status --column"
