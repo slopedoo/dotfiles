@@ -10,7 +10,7 @@ install:
 	mkdir -p ~/bin
 	cp dotfiles/_caps $(INSTALL_DIR).caps
 	cp autostart/caps_remap.desktop $(INSTALL_DIR).config/autostart/
-        cp dotfiles/_conkystart $(INSTALL_DIR).conkystart
+	cp dotfiles/_conkystart $(INSTALL_DIR).conkystart
 	cp autostart/conky.desktop $(INSTALL_DIR).config/autostart/
 	cp searchscript/simplesearch $(INSTALL_DIR)bin/
 	cp clean/cleandownloads $(INSTALL_DIR)bin/
