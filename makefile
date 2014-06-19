@@ -12,7 +12,7 @@ install:
 	cp autostart/caps_remap.desktop $(INSTALL_DIR).config/autostart/
 	cp dotfiles/_conkystart $(INSTALL_DIR).conkystart
 	cp autostart/conky.desktop $(INSTALL_DIR).config/autostart/
-	cp searchscript/simplesearch $(INSTALL_DIR)bin/
-	cp clean/cleandownloads $(INSTALL_DIR)bin/
+	cp scripts/simplesearch $(INSTALL_DIR)bin/
+	cp scripts/cleandirectory $(INSTALL_DIR)bin/
 	chmod +x $(INSTALL_DIR)bin/simplesearch
-	chmod +x $(INSTALL_DIR)bin/cleandownloads
+	chmod +x $(INSTALL_DIR)bin/cleandirectory

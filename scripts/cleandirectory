@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Config #
+PROG_NAME="cleanfolder"
+DEFAULT_PATH="/home/$USER/Downloads"
+# Config #
+
+if [[ -z $1 ]]; then
+	path=$DEFAULT_PATH
+else
+	if [[ $1 = "-h" ]]; then
+		echo " "
+		echo " Usage:"
+		echo "  <$PROG_NAME> 	 -- Cleans $DEFAULT_PATH directory."
+		echo "  <$PROG_NAME DIR_NAME> -- Cleans DIR_NAME."
+		echo "  <$PROG_NAME -h> 	 -- Show this help dialog."
+		echo " "
+		exit
+	else
+		path=$1
+		if [ ! -d "$path" ]; then
+			echo " "
+			echo " Directory doesn't exist."
+			echo " Use with no arguments for default directory ($DEFAULT_PATH)"
+			echo " "
+			exit
+		fi
+	fi
+fi
+
+shopt -s extglob
+year=$(date +"%Y")
+
+cd $path
+
+for FILENAME in *
+do
+	date=$(stat -c %Y "$FILENAME" | awk '{print strftime("%d_%m_%Y", $1)}')
+	mkdir -vp "$date"
+	find . -maxdepth 1 -name $FILENAME \! -name "*$year" -exec mv -v {} "$date" \;
+done
