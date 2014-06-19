@@ -1,20 +1,34 @@
 #!/bin/bash
-shopt -s extglob
-now=$(date +"%m_%d_%Y")
 
-cd ~/Downloads/
-if [[ $(ls !(*.zip|*.iso|old|zips|isos) 2>/dev/null | wc -l ) != 0 ]]; then
-	if [[ ! -d old/$now ]]; then
-		echo -ne "\e[1;31m"		
-		mkdir -v old/$now/
+# Config #
+PROG_NAME="cleanfolder"
+DEFAULT_PATH="/home/$USER/Downloads"
+# Config #
+
+if [[ -z $1 ]]; then
+	cd $DEFAULT_PATH
+else
+	if [[ $1 = "-h" ]]; then
+		echo " "
+		echo " Usage:"
+		echo "  <$PROG_NAME> 	 -- Cleans $DEFAULT_PATH directory."
+		echo "  <$PROG_NAME DIR_NAME> -- Cleans DIR_NAME."
+		echo "  <$PROG_NAME -h> 	 -- Show this help dialog."
+		echo " "
+		exit
+	else
+		cd $1
 	fi
-	echo -ne "\e[1;36m"
-	mv -v !(*.zip|*.iso|old|zips|isos) old/$now/
 fi
-echo -ne "\e[1;33m"
-mv -v *.zip zips/ 2>/dev/null
-echo -ne "\e[1;35m"
-mv -v *.iso isos/ 2>/dev/null
-echo -ne "\e[0m"
 
-shopt -u extglob
+shopt -s extglob
+year=$(date +"%Y")
+
+for FILENAME in *
+do
+	#if [[ -f $FILENAME ]]; then
+		date=$(stat -c %Y "$FILENAME" | awk '{print strftime("%d_%m_%Y", $1)}')
+		mkdir -vp "$date"
+		find . -maxdepth 1 -name $FILENAME \! -name "*$year" -exec mv {} "$date" \;
+	#fi
+done 
