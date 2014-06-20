@@ -9,7 +9,6 @@ alias grep='grep --color=tty -d skip'
 alias cp="cp -i"
 alias df='df -h'
 alias free='free -m' # show sizes in MB
-alias upd="sudo pacman -Syu"
 alias gedit="$EDITOR"
 alias conkyrc="$EDITOR ~/.conkyrc"
 alias conkybackup="cp ~/.conkyrc ~/Dropbox/Annet/linuxBak/.conkyrc.bak"
@@ -20,7 +19,13 @@ alias fstab="sudo $EDITOR /etc/fstab"
 alias removedir="sudo rm -rf"
 alias pdelete="sudo pacman -Rsn"  ##fully deletes packages - including dependencies & config files
 alias pS="sudo pacman -S"
+alias pSyu="sudo pacman -Syu"
 alias namemaker="shuf -n 2 /usr/share/dict/cracklib-small | tr -dc 'A-Za-z0-9\n'"
+
+# SSH
+alias sshproxy="ssh -N -D 8080 sigurd@192.168.1.216 -p 80"
+alias sshmusic="sshfs -p 80 sigurd@192.168.1.216:/run/media/sigurd/Storage/Musikk ~/Music"
+alias sshcon="ssh sigurd@192.168.1.216 -p 80"
 
 # Git aliases
 alias gstat="git status --column"
