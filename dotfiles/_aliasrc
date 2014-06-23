@@ -1,7 +1,7 @@
 #-----------------
 # Aliases
 #-----------------
-EDITOR="mousepad"
+EDITOR="vim"
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
@@ -9,10 +9,10 @@ alias grep='grep --color=tty -d skip'
 alias cp="cp -i"
 alias df='df -h'
 alias free='free -m' # show sizes in MB
-alias gedit="$EDITOR"
 alias conkyrc="$EDITOR ~/.conkyrc"
 alias conkybackup="cp ~/.conkyrc ~/Dropbox/Annet/linuxBak/.conkyrc.bak"
 alias bashrc="$EDITOR ~/.bashrc"
+alias vimrc="$EDITOR ~/.vimrc"
 alias src="source ~/.bashrc"
 alias bbak="cp ~/.bashrc ~/Dropbox/Annet/linuxBak/.bashrc.bak"
 alias fstab="sudo $EDITOR /etc/fstab"

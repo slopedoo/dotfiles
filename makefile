@@ -7,6 +7,7 @@ install:
 	cp dotfiles/_bashrc $(INSTALL_DIR).bashrc
 	cp dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
 	cp dotfiles/_conkyrc $(INSTALL_DIR).conkyrc
+	cp dotfiles/_vimrc $(INSTALL_DIR).vimrc
 	mkdir -p ~/bin
 	cp dotfiles/_caps $(INSTALL_DIR).caps
 	cp autostart/caps_remap.desktop $(INSTALL_DIR).config/autostart/
