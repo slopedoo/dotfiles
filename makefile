@@ -15,5 +15,6 @@ install:
 	cp autostart/conky.desktop $(INSTALL_DIR).config/autostart/
 	cp scripts/simplesearch $(INSTALL_DIR)bin/
 	cp scripts/cleandirectory $(INSTALL_DIR)bin/
+	cp scripts/gmail.py $(INSTALL_DIR).scripts/
 	chmod +x $(INSTALL_DIR)bin/simplesearch
 	chmod +x $(INSTALL_DIR)bin/cleandirectory
