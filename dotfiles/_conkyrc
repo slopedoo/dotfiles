@@ -10,11 +10,11 @@ own_window_hints undecorate,sticky,skip_taskbar,skip_pager
 #position
 gap_x 0
 #gap_y 1040
-gap_y 3
+gap_y 7
 alignment top_right
 
 #behaviour
-update_interval 2
+update_interval 1
 
 #colour
 default_color 8f8f8f
