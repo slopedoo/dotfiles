@@ -1,4 +1,5 @@
 #!/bin/bash
 sleep 10
 conky
-
+synclient TapButton3=0 
+synclient TapButton2=0
