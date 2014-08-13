@@ -1,6 +1,5 @@
 # Requires modules: requests
 #                   argh
-#                   soundcloud
 #                   humanize
 
 # pip2 install <MODULE>
@@ -19,8 +18,6 @@ import unicodedata
 import requests
 import argh
 import humanize
-
-from ID3 import *
 
 class SoundCloudClient(object):
 
@@ -41,19 +38,23 @@ class SoundCloudClient(object):
 
 def normalize(filename):
     '''Normalize the given name to make it a valid filename'''
-    if isinstance(filename, unicode):
-        filename = unicodedata.normalize('NFKD', filename)
+    # if isinstance(filename, unicode):
+    #    filename = unicodedata.normalize('NFKD', filename)
 
-    return re.sub(r'[\/\\\:\*\?\"\<\>\|]', '', filename)
+    # fix for special unicode letters
+    return ''.join(c for c in unicodedata.normalize('NFD', filename)
+                              if unicodedata.category(c) != 'Mn')
+
+    # return re.sub(r'[\/\\\:\*\?\"\<\>\|]', '', filename)
 
 def download_track(client, track, output_dir):
     title = normalize(track['title'])
     audio_track = os.path.join(output_dir, title) + '.' + track['original_format']
 
     if os.path.exists(audio_track):
-        print u'Track "{}" already exists'.format(track['title'])
+        print u'Track "{}" already exists'.format(title)
         return
-
+    print u'\n' # space between downloaded files
     stream_url = track['stream_url']
     request = client.request(stream_url, stream=True)
     downloaded_track = u'{}.part'.format(audio_track)
@@ -76,9 +77,9 @@ def download_track(client, track, output_dir):
 
             if i % 2 == 0:
                 print u'\rDownloading track {}, {:.1f}%, {}/s   '.format(
-                                                                            track['title'],
-                                                                            f.tell() * 100 / content_length,
-                                                                            humanize.naturalsize(download_speed)),
+                                                                        title,
+                                                                        f.tell() * 100 / content_length,
+                                                                        humanize.naturalsize(download_speed)),
 
     os.rename(downloaded_track, audio_track)
 
