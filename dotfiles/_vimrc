@@ -167,6 +167,8 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
+map <leader>t :tabnext<cr>
+map <leader>T :tabprev<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -274,6 +276,7 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
+inoremap <leader>; <C-o>m`<C-o>A;<C-o>``
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
@@ -348,3 +351,5 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+
