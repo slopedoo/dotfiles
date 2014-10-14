@@ -12,6 +12,8 @@ clean:
 	rm $(INSTALL_DIR).config/autostart/caps_remap.desktop
 	rm $(INSTALL_DIR).conkystart
 	rm $(INSTALL_DIR).config/autostart/conky.desktop
+	rm $(INSTALL_DIR).config/autostart/touchpad_settings.desktop
+	rm $(INSTALL_DIR).config/autostart/xSwipe.desktop
 	rm $(INSTALL_DIR).scripts/gmail.py
 	rm $(INSTALL_DIR).config/.touchpad_settings.sh
 	rm -rf $(INSTALL_DIR).xSwipe/*
@@ -24,9 +26,8 @@ install:
 	sudo cp dotfiles/fu.vim /usr/share/vim/vim74/colors/
 	mkdir -p ~/bin
 	ln dotfiles/_caps $(INSTALL_DIR).caps
-	ln autostart/caps_remap.desktop $(INSTALL_DIR).config/autostart/
+	ln autostart/* $(INSTALL_DIR).config/autostart/
 	ln dotfiles/_conkystart $(INSTALL_DIR).conkystart
-	ln autostart/conky.desktop $(INSTALL_DIR).config/autostart/
 	mkdir -p $(INSTALL_DIR).scripts/
 	cp scripts/gmail.py $(INSTALL_DIR).scripts/
 	ln dotfiles/_touchpad_settings.sh $(INSTALL_DIR).config/.touchpad_settings.sh
