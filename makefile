@@ -13,6 +13,8 @@ clean:
 	rm $(INSTALL_DIR).conkystart
 	rm $(INSTALL_DIR).config/autostart/conky.desktop
 	rm $(INSTALL_DIR).scripts/gmail.py
+	rm $(INSTALL_DIR).config/.touchpad_settings.sh
+	rm -rf $(INSTALL_DIR).xSwipe/*
 
 install:
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
@@ -25,5 +27,11 @@ install:
 	ln autostart/caps_remap.desktop $(INSTALL_DIR).config/autostart/
 	ln dotfiles/_conkystart $(INSTALL_DIR).conkystart
 	ln autostart/conky.desktop $(INSTALL_DIR).config/autostart/
+	mkdir -p $(INSTALL_DIR).scripts/
 	cp scripts/gmail.py $(INSTALL_DIR).scripts/
+	ln dotfiles/_touchpad_settings.sh $(INSTALL_DIR).config/.touchpad_settings.sh
+	mkdir -p $(INSTALL_DIR).xSwipe/nScroll
+	ln dotfiles/_xSwipe/eventKey.cfg $(INSTALL_DIR).xSwipe/
+	ln dotfiles/_xSwipe/xSwipe.pl $(INSTALL_DIR).xSwipe/
+	ln dotfiles/_xSwipe/nScroll/* $(INSTALL_DIR).xSwipe/nScroll/
 	chmod +x $(INSTALL_DIR).scripts/gmail.py
