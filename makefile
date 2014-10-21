@@ -31,6 +31,7 @@ install:
 	mkdir -p $(INSTALL_DIR).scripts/
 	cp scripts/gmail.py $(INSTALL_DIR).scripts/
 	ln dotfiles/_touchpad_settings.sh $(INSTALL_DIR).config/.touchpad_settings.sh
+	chmod +x $(INSTALL_DIR).config/.touchpad_settings.sh
 	mkdir -p $(INSTALL_DIR).xSwipe/nScroll
 	ln dotfiles/_xSwipe/eventKey.cfg $(INSTALL_DIR).xSwipe/
 	ln dotfiles/_xSwipe/xSwipe.pl $(INSTALL_DIR).xSwipe/
