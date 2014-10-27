@@ -38,5 +38,5 @@ install:
 	ln dotfiles/_xSwipe/xSwipe.pl $(INSTALL_DIR).xSwipe/
 	ln dotfiles/_xSwipe/nScroll/* $(INSTALL_DIR).xSwipe/nScroll/
 	chmod +x $(INSTALL_DIR).scripts/gmail.py
-	mkdir -p $(INSTALL_DIR).vim/plugins/
+	mkdir -p $(INSTALL_DIR).vim/plugin/
 	ln dotfiles/auto-pairs.vim $(INSTALL_DIR).vim/plugin/auto-pairs.vim
