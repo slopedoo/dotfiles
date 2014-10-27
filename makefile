@@ -17,6 +17,7 @@ clean:
 	rm $(INSTALL_DIR).scripts/gmail.py
 	rm $(INSTALL_DIR).config/.touchpad_settings.sh
 	rm -rf $(INSTALL_DIR).xSwipe/*
+	rm $(INSTALL_DIR).vim/plugin/auto-pairs.vim
 
 install:
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
@@ -37,3 +38,5 @@ install:
 	ln dotfiles/_xSwipe/xSwipe.pl $(INSTALL_DIR).xSwipe/
 	ln dotfiles/_xSwipe/nScroll/* $(INSTALL_DIR).xSwipe/nScroll/
 	chmod +x $(INSTALL_DIR).scripts/gmail.py
+	mkdir -p $(INSTALL_DIR).vim/plugins/
+	ln dotfiles/auto-pairs.vim $(INSTALL_DIR).vim/plugin/auto-pairs.vim
