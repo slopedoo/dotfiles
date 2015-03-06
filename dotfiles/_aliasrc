@@ -26,6 +26,7 @@ alias namemaker="shuf -n 2 /usr/share/dict/cracklib-small | tr -dc 'A-Za-z0-9\n'
 alias sshproxy="ssh -N -D 8080 sigurd@192.168.1.216 -p 80"
 alias sshmusic="sshfs -p 80 sigurd@192.168.1.216:/run/media/sigurd/Storage/Musikk ~/Music"
 alias sshcon="ssh sigurd@192.168.1.216 -p 80"
+alias sshweb="ssh nfnorw5@ecbiz171.inmotionhosting.com -p 2222"
 
 # Git aliases
 alias gstat="git status --column"

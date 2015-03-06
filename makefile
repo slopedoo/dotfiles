@@ -18,6 +18,7 @@ clean:
 	rm $(INSTALL_DIR).config/.touchpad_settings.sh
 	rm -rf $(INSTALL_DIR).xSwipe/*
 	rm $(INSTALL_DIR).vim/plugin/auto-pairs.vim
+	rm $(INSTALL_DIR)bin/scdl.py
 
 install:
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
@@ -40,3 +41,5 @@ install:
 	chmod +x $(INSTALL_DIR).scripts/gmail.py
 	mkdir -p $(INSTALL_DIR).vim/plugin/
 	ln dotfiles/auto-pairs.vim $(INSTALL_DIR).vim/plugin/auto-pairs.vim
+	ln scripts/scdl.py $(INSTALL_DIR)bin/
+	chmod +x $(INSTALL_DIR)bin/scdl.py
