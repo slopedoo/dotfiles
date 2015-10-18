@@ -25,6 +25,10 @@ install:
 	ln dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
 	ln dotfiles/_conkyrc $(INSTALL_DIR).conkyrc
 	ln dotfiles/_vimrc $(INSTALL_DIR).vimrc
+	mkdir -p $(INSTALL_DIR).vim/plugin && ln vim/plugin/* $(INSTALL_DIR).vim/plugin/
+	mkdir $(INSTALL_DIR).vim/autoload && ln vim/autoload/* $(INSTALL_DIR).vim/autoload/
+	mkdir $(INSTALL_DIR).vim/doc && ln vim/doc/* $(INSTALL_DIR).vim/doc/
+	mkdir $(INSTALL_DIR).vim/test && ln vim/test/* $(INSTALL_DIR).vim/test/
 	sudo cp dotfiles/fu.vim /usr/share/vim/vim74/colors/
 	mkdir -p ~/bin
 	#ln dotfiles/_caps $(INSTALL_DIR).caps
