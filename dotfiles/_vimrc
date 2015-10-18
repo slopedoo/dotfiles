@@ -1,5 +1,18 @@
+" Disable all blinking:
+" :set guicursor+=a:blinkon0
+" " Remove previous setting:
+" :set guicursor-=a:blinkon0
+" " Restore default setting:
+" :set guicursor&
+
+set number " Line numbering
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
+inoremap <leader>; <C-o>A;
+let delimitMate_expand_cr = 1
+filetype indent plugin on
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -135,8 +148,11 @@ set tabstop=4
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
+" set ai "Auto indent
+" set autoindent
+" set cindent
+" set smartindent
+" set si "Smart indent
 set wrap "Wrap lines
 
 
