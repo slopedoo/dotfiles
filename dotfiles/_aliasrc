@@ -17,14 +17,15 @@ alias src="source ~/.bashrc"
 alias bbak="cp ~/.bashrc ~/Dropbox/Annet/linuxBak/.bashrc.bak"
 alias fstab="sudo $EDITOR /etc/fstab"
 alias removedir="sudo rm -rf"
-alias pR="sudo apt-get purge"  ##fully deletes packages - including dependencies & config files
-alias pS="sudo apt-get install"
-alias pU="sudo apt-get update"
-alias pSyu="sudo apt-get update && sudo apt-get upgrade"
+alias pR="sudo pacman -R"  ##fully deletes packages - including dependencies & config files
+alias pS="sudo pacman -S"
+alias pSyu="sudo pacman -Syu"
 alias namemaker="shuf -n 2 /usr/share/dict/cracklib-small | tr -dc 'A-Za-z0-9\n'"
 
 # SSH
 alias ssherver="ssh 10.0.0.2"
+alias sshweb="ssh nerud@login.domeneshop.no"
+alias ssheed="ssh slopedoo@briareus.feralhosting.com"
 
 # Git aliases
 alias gstat="git status --column"
