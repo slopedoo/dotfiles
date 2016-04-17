@@ -21,6 +21,7 @@ alias pR="sudo pacman -R"  ##fully deletes packages - including dependencies & c
 alias pS="sudo pacman -S"
 alias pSyu="sudo pacman -Syu"
 alias namemaker="shuf -n 2 /usr/share/dict/cracklib-small | tr -dc 'A-Za-z0-9\n'"
+alias wow="wine /run/media/sigurd/Storage/Programmer/2.4.3\ client/Wow.exe"
 
 # SSH
 alias ssherver="ssh 10.0.0.2"

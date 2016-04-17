@@ -80,3 +80,6 @@ ${color white}NETWORK ${hr 1}${color}
 Down ${downspeed wlp0s20u11}/s ${alignr}Up ${upspeed wlp0s20u11}/s
 ${downspeedgraph wlp0s20u11 25,107} ${alignr}${upspeedgraph wlp0s20u11 25,107}
 Total ${totaldown wlp0s20u11} ${alignr}Total ${totalup wlp0s20u11}
+
+${color white}MEDIASERVER ${hr 1}${color}
+${execi 60 ssh sigurd@10.0.0.2 uptime -p}
