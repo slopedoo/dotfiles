@@ -21,28 +21,30 @@ clean:
 	#rm $(INSTALL_DIR)bin/scdl.py
 
 install:
+	echo "----------------------------------"
 	echo "Old files will be moved to ~/.bak/"
+	echo "----------------------------------"
 	mkdir -p $(INSTALL_DIR).bak
 	if [ -f $(INSTALL_DIR).bashrc ]; then\
-		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/.bashrc.bak;\
+		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/bashrc.bak;\
 	fi
 	if [ -f $(INSTALL_DIR).aliasrc ]; then\
-		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/.aliasrc.bak;\
+		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/aliasrc.bak;\
 	fi
 	if [ -f $(INSTALL_DIR).vimrc ]; then\
-		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/.vimrc.bak;\
+		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/vimrc.bak;\
 	fi
 	if [ -f $(INSTALL_DIR).conkyrc ]; then\
-		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/.conkyrc.bak;\
+		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/conkyrc.bak;\
 	fi
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
 	ln dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
 	ln dotfiles/_conkyrc $(INSTALL_DIR).conkyrc
 	ln dotfiles/_vimrc $(INSTALL_DIR).vimrc
-	mkdir -p $(INSTALL_DIR).vim/plugin && ln vim/plugin/* $(INSTALL_DIR).vim/plugin/
-	mkdir $(INSTALL_DIR).vim/autoload && ln vim/autoload/* $(INSTALL_DIR).vim/autoload/
-	mkdir $(INSTALL_DIR).vim/doc && ln vim/doc/* $(INSTALL_DIR).vim/doc/
-	mkdir $(INSTALL_DIR).vim/test && ln vim/test/* $(INSTALL_DIR).vim/test/
+	mkdir -p $(INSTALL_DIR).vim/plugin && ln -f vim/plugin/* $(INSTALL_DIR).vim/plugin/
+	mkdir -p $(INSTALL_DIR).vim/autoload && ln -f vim/autoload/* $(INSTALL_DIR).vim/autoload/
+	mkdir -p $(INSTALL_DIR).vim/doc && ln -f vim/doc/* $(INSTALL_DIR).vim/doc/
+	mkdir -p $(INSTALL_DIR).vim/test && ln -f vim/test/* $(INSTALL_DIR).vim/test/
 	sudo cp dotfiles/fu.vim /usr/share/vim/vim74/colors/
 	mkdir -p ~/bin
 	#ln dotfiles/_caps $(INSTALL_DIR).caps
