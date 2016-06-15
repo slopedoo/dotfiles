@@ -6,7 +6,7 @@ all:
 clean:
 	rm $(INSTALL_DIR).bashrc
 	rm $(INSTALL_DIR).aliasrc
-	#rm $(INSTALL_DIR).conkyrc
+	rm $(INSTALL_DIR).conkyrc
 	rm $(INSTALL_DIR).vimrc
 	#rm $(INSTALL_DIR).caps
 	#rm $(INSTALL_DIR).config/autostart/caps_remap.desktop
@@ -23,17 +23,17 @@ clean:
 install:
 	echo "Old files will be moved to ~/.bak/"
 	mkdir -p $(INSTALL_DIR).bak
-	if [ -f $(INSTALL_DIR).bashrc ]; then
-		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/.bashrc.bak
+	if [ -f $(INSTALL_DIR).bashrc ]; then\
+		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/.bashrc.bak;\
 	fi
-	if [ -f $(INSTALL_DIR).aliasrc ]; then
-		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/.aliasrc.bak
+	if [ -f $(INSTALL_DIR).aliasrc ]; then\
+		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/.aliasrc.bak;\
 	fi
-	if [ -f $(INSTALL_DIR).vimrc ]; then
-		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/.vimrc.bak
+	if [ -f $(INSTALL_DIR).vimrc ]; then\
+		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/.vimrc.bak;\
 	fi
-	if [ -f $(INSTALL_DIR).conkyrc ]; then
-		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/.conkyrc.bak
+	if [ -f $(INSTALL_DIR).conkyrc ]; then\
+		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/.conkyrc.bak;\
 	fi
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
 	ln dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
