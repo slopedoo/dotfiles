@@ -21,9 +21,14 @@ clean:
 	#rm $(INSTALL_DIR)bin/scdl.py
 
 install:
-	echo "----------------------------------"
-	echo "Old files will be moved to ~/.bak/"
-	echo "----------------------------------"
+	while true; do
+	    read -p "Old configuration files will be moved to $(INSTALL_DIR).bak/." yn
+		case $yn in
+			[Yy]* ) make install; break;;
+			[Nn]* ) exit;;
+			* ) echo "Please answer yes or no.";;
+		esac
+	done
 	mkdir -p $(INSTALL_DIR).bak
 	if [ -f $(INSTALL_DIR).bashrc ]; then\
 		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/bashrc.bak;\
