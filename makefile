@@ -21,6 +21,11 @@ clean:
 	#rm $(INSTALL_DIR)bin/scdl.py
 
 install:
+	echo "Old files will be moved to ~/.bak/"
+	mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/.bashrc.bak
+	mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/.aliasrc.bak
+	mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/.vimrc.bak
+	mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/.conkyrc.bak
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
 	ln dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
 	ln dotfiles/_conkyrc $(INSTALL_DIR).conkyrc
