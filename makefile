@@ -23,10 +23,18 @@ clean:
 install:
 	echo "Old files will be moved to ~/.bak/"
 	mkdir -p $(INSTALL_DIR).bak
-	if [ -f $(INSTALL_DIR).bashrc ]; then; mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/.bashrc.bak; fi
-	if [ -f $(INSTALL_DIR).aliasrc ]; then; mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/.aliasrc.bak; fi
-	if [ -f $(INSTALL_DIR).vimrc ]; then; mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/.vimrc.bak; fi
-	if [ -f $(INSTALL_DIR).conkyrc ]; then; mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/.conkyrc.bak; fi
+	if [ -f $(INSTALL_DIR).bashrc ]; then
+		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/.bashrc.bak
+	fi
+	if [ -f $(INSTALL_DIR).aliasrc ]; then
+		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/.aliasrc.bak
+	fi
+	if [ -f $(INSTALL_DIR).vimrc ]; then
+		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/.vimrc.bak
+	fi
+	if [ -f $(INSTALL_DIR).conkyrc ]; then
+		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/.conkyrc.bak
+	fi
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
 	ln dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
 	ln dotfiles/_conkyrc $(INSTALL_DIR).conkyrc
