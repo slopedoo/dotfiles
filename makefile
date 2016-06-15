@@ -1,4 +1,5 @@
 INSTALL_DIR=~/
+HASH=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1`
 
 all:
 	@echo "Please run 'make install'"
@@ -23,16 +24,16 @@ clean:
 install:
 	mkdir -p $(INSTALL_DIR).bak
 	if [ -f $(INSTALL_DIR).bashrc ]; then\
-		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/bashrc.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1);\
+		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/bashrc.$(HASH);\
 	fi
 	if [ -f $(INSTALL_DIR).aliasrc ]; then\
-		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/aliasrc.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1);\
+		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/aliasrc.$(HASH);\
 	fi
 	if [ -f $(INSTALL_DIR).vimrc ]; then\
-		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/vimrc.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1);\
+		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/vimrc.$(HASH);\
 	fi
 	if [ -f $(INSTALL_DIR).conkyrc ]; then\
-		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/conkyrc.$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1);\
+		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/conkyrc.$(HASH);\
 	fi
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
 	ln dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
