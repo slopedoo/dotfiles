@@ -22,6 +22,7 @@ clean:
 
 install:
 	echo "Old files will be moved to ~/.bak/"
+	mkdir -p $(INSTALL_DIR).bak
 	mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/.bashrc.bak
 	mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/.aliasrc.bak
 	mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/.vimrc.bak
