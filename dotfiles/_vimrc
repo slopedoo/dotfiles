@@ -1,35 +1,61 @@
-" Disable all blinking:
-" :set guicursor+=a:blinkon0
-" " Remove previous setting:
-" :set guicursor-=a:blinkon0
-" " Restore default setting:
-" :set guicursor&
-
-set number " Line numbering
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
-inoremap <leader>; <C-o>A;
-let delimitMate_expand_cr = 1
-filetype indent plugin on
-
 
 " set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'Raimondi/delimitMate'
+Plugin 'vim-airline'
+Plugin 'vim-airline-themes'
+
+" " Keep Plugin commands between vundle#begin/end.
+Plugin 'ultisnips'
+Plugin 'Auto-Pairs'
+
+" " All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" " Put your non-Plugin stuff after this line
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Disable all blinking:
+":set guicursor+=a:blinkon0
+"" Remove previous setting:
+":set guicursor-=a:blinkon0
+"" Restore default setting:
+":set guicursor&
+
+ino jj <esc>
+cno jj <c-c>
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsExpandTrigger = '<C-j>'
+"let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+"let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+set number " Line numbering
+
+inoremap <leader>; <C-o>A;
 
 " Sets how many lines of history VIM has to remember
 set history=700
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -153,10 +179,10 @@ set lbr
 set tw=500
 
 " set ai "Auto indent
-" set autoindent
-" set cindent
-" set smartindent
-" set si "Smart indent
+set autoindent
+set cindent
+set smartindent
+set si "Smart indent
 set wrap "Wrap lines
 
 
@@ -233,7 +259,7 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -384,5 +410,3 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
-
-
