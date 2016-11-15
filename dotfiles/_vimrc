@@ -14,13 +14,12 @@ Plugin 'vim-airline-themes'
 " " Keep Plugin commands between vundle#begin/end.
 Plugin 'ultisnips'
 Plugin 'Auto-Pairs'
+Plugin 'honza/vim-snippets'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " " Put your non-Plugin stuff after this line
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" Disable all blinking:
 ":set guicursor+=a:blinkon0
@@ -36,21 +35,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-"let g:UltiSnipsExpandTrigger = '<C-j>'
-"let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-"let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-
-set number " Line numbering
+let g:UltiSnipsJumpForwardTrigger="<c-h>"
+let g:UltiSnipsJumpBackwardTrigger="<c-l>"
 
 inoremap <leader>; <C-o>A;
 
@@ -77,6 +65,9 @@ set so=7
 
 " Turn on the WiLd menu
 set wildmenu
+
+" Line numbering
+set number
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -343,7 +334,7 @@ inoremap <leader>; <C-o>m`<C-o>A;<C-o>``
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scripbble
+" Quickly open a buffer for scribble
 map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
