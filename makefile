@@ -9,16 +9,16 @@ all:
 uninstall:
 	mkdir -p $(INSTALL_DIR).bak
 	if [ -f $(INSTALL_DIR).bashrc ]; then\
-		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/bashrc.$(HASH);\
+		mv $(INSTALL_DIR).bashrc $(INSTALL_DIR).bak/bashrc.$(date +"%d-%m-%Y").$(HASH);\
 	fi
 	if [ -f $(INSTALL_DIR).aliasrc ]; then\
-		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/aliasrc.$(HASH);\
+		mv $(INSTALL_DIR).aliasrc $(INSTALL_DIR).bak/aliasrc.$(date +"%d-%m-%Y").$(HASH);\
 	fi
 	if [ -f $(INSTALL_DIR).vimrc ]; then\
-		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/vimrc.$(HASH);\
+		mv $(INSTALL_DIR).vimrc $(INSTALL_DIR).bak/vimrc.$(date +"%d-%m-%Y").$(HASH);\
 	fi
 	if [ -f $(INSTALL_DIR).conkyrc ]; then\
-		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/conkyrc.$(HASH);\
+		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/conkyrc.$(date +"%d-%m-%Y").$(HASH);\
 	fi
 	if [ -f $(VIM_DIR)/colors/fu.vim ]; then\
 		rm $(VIM_DIR)/colors/fu.vim;\

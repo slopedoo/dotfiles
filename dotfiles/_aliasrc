@@ -14,7 +14,6 @@ alias conkybackup="cp ~/.conkyrc ~/Dropbox/Annet/linuxBak/.conkyrc.bak"
 alias bashrc="$EDITOR ~/.bashrc"
 alias vimrc="$EDITOR ~/.vimrc"
 alias src="source ~/.bashrc"
-alias bbak="cp ~/.bashrc ~/Dropbox/Annet/linuxBak/.bashrc.bak"
 alias fstab="sudo $EDITOR /etc/fstab"
 alias removedir="sudo rm -rf"
 alias pR="sudo pacman -R"  ##fully deletes packages - including dependencies & config files
@@ -26,7 +25,6 @@ alias wow="wine /run/media/sigurd/Storage/Programmer/2.4.3\ client/Wow.exe"
 # SSH
 alias ssherver="ssh 10.0.0.2"
 alias sshweb="ssh nerud@login.domeneshop.no"
-alias ssheed="ssh slopedoo@briareus.feralhosting.com"
 
 # Git aliases
 alias gstat="git status --column"
