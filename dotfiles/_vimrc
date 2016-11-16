@@ -56,6 +56,8 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Clear search pattern register
+map <leader>c :noh<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -120,6 +122,8 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+let python_highlight_all = 1
+highlight Comment cterm=bold
 
 set t_Co=256
 colorscheme fu
@@ -156,14 +160,14 @@ set noswapfile
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-set expandtab
+" set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+ set shiftwidth=4
+ set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
