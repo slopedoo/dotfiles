@@ -38,6 +38,8 @@ install:
 	if [ -f $(INSTALL_DIR).conkyrc ]; then\
 		mv $(INSTALL_DIR).conkyrc $(INSTALL_DIR).bak/conkyrc.$(HASH);\
 	fi
+	mkdir -p ~/.config/fusuma
+	ln dotfiles/fusuma_config.yml ~/.config/fusuma/config.yml
 	ln dotfiles/_bashrc $(INSTALL_DIR).bashrc
 	ln dotfiles/_aliasrc $(INSTALL_DIR).aliasrc
 	ln dotfiles/_conkyrc $(INSTALL_DIR).conkyrc
