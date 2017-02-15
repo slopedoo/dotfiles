@@ -4,9 +4,7 @@ Version=0.9.4
 Type=Application
 Name=conky
 Comment=
-Exec=/home/sigurd/.conkystart
-OnlyShowIn=XFCE;
+Exec=/usr/bin/conky
 StartupNotify=false
 Terminal=false
 Hidden=false
-
